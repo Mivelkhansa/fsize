@@ -12,7 +12,7 @@
 
 Config parse_args(int argc, char *argv[]) {
     Config config = {0};
-    config.depth= 1;
+    config.depth= 0;
     config.recursive = false;
     config.human_readable = false;
 

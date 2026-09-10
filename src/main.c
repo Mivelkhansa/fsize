@@ -6,6 +6,10 @@
 #include "argparser.h"
 #include "file.h"
 
+#ifndef RECURSION_DEPTH_MAX
+#define RECURSION_DEPTH_MAX 999999
+#endif
+
 
 int main(int argc, char *argv[]) {
     Config config = parse_args(argc, argv);
@@ -17,7 +21,13 @@ int main(int argc, char *argv[]) {
         return 0;
     }
 
-    off_t size = walk_directory(config.path, config.depth);
+    off_t size = 0;
+    if (config.recursive == true) {
+        size = walk_directory(config.path, RECURSION_DEPTH_MAX);
+    } else {
+        size = walk_directory(config.path, config.depth);
+    }
+
     printf("Total Size: %ld\n", size);
 
     return 0;

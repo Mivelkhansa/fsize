@@ -2,12 +2,13 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <dirent.h>
+#include <limits.h>
 
 #include "argparser.h"
 #include "file.h"
 
 #ifndef RECURSION_DEPTH_MAX
-#define RECURSION_DEPTH_MAX 999999
+#define RECURSION_DEPTH_MAX INT_MAX
 #endif
 
 

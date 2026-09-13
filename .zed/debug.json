@@ -1,0 +1,13 @@
+[
+  {
+    "label": "Debug fsize",
+    "adapter": "CodeLLDB",
+    "request": "launch",
+    "build": {
+      "command": "bear -- make debug"
+    },
+    "program": "$ZED_WORKTREE_ROOT/build/bin/fsize-debug",
+    "args": ["-r", "$ZED_WORKTREE_ROOT"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+  }
+]
